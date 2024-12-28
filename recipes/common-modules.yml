@@ -28,18 +28,17 @@ modules:
         - org.gnome.eog
 
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghosty-fedora-%OS_VERSION%.repo 
     install:
       - xdg-desktop-portal-gtk
-      - alacritty
-      - hyprcursor
+      - ghostty
       - swaybg
       - wofi
       - udisks2
       - udiskie
       - htop
-      - gamescope
       - tailscale
-      - wireshark
     remove:
       - firefox
       - firefox-langpacks

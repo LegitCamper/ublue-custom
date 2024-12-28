@@ -9,5 +9,9 @@ modules:
     scripts:
       - pyprland.sh
 
+  - type: rpm-ostree
+    install:
+      - hyprcursor
+
   - from-file: common-modules.yml
 
