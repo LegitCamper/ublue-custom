@@ -33,6 +33,7 @@ modules:
     install:
       - xdg-desktop-portal-gtk
       - ghostty
+      - alacritty
       - swaybg
       - wofi
       - udisks2
