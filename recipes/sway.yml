@@ -1,8 +1,12 @@
 name: ublue-sway
-description: This is a Fedora Silverblue Sway OS image.
+description: This is a Bazzite Sway OS image.
 
-base-image: ghcr.io/wayblueorg/sway
+base-image: ghcr.io/ublue-os/bazzite
 image-version: latest
 
 modules:
   - from-file: common-modules.yml
+
+  - type: rpm-ostree
+    install:
+      - sway
