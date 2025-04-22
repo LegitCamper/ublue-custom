@@ -64,6 +64,8 @@ modules:
       - gvfs-fuse
       - gvfs-archive
     remove:
+      - dolphin
+      - dolphin-plugins 
       - akonadi-server
       - akonadi-server-mysql
       - wallpaper-engine-kde-plugin
