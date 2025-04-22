@@ -26,6 +26,7 @@ modules:
 
   - type: rpm-ostree
     install:
+      - alacritty
       - waybar
       - xdg-desktop-portal-gtk
       - pavucontrol
