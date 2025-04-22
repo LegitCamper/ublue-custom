@@ -1,17 +1,15 @@
 name: ublue-hyprland
-description: This is a Fedora Silverblue Hyprland OS image.
+description: This is a Bazzite Hyprland OS image.
 
-base-image: ghcr.io/wayblueorg/hyprland
+base-image: ghcr.io/ublue-os/bazzite
 image-version: latest
 
 modules:
-  - type: script
-    scripts:
-      - pyprland.sh
+  - from-file: common-modules.yml
 
   - type: rpm-ostree
     install:
+      - hyprland        
+      - xdg-desktop-portal-hyprland
+      - swaybg
       - hyprcursor
-
-  - from-file: common-modules.yml
-

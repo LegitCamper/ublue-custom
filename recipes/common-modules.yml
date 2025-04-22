@@ -21,38 +21,125 @@ modules:
         - com.vivaldi.Vivaldi
         - com.github.tchx84.Flatseal
         - io.github.spacingbat3.webcord
-        - com.valvesoftware.Steam
-        - net.davidotek.pupgui2
-        - com.bitwarden.desktop
       remove:
         - org.gnome.eog
 
   - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghosty-fedora-%OS_VERSION%.repo 
     install:
+      - alacritty
+      - waybar
       - xdg-desktop-portal-gtk
-      - ghostty
+      - pavucontrol
+      - gnome-disk-utility
+      - papirus-icon-theme
       - swaybg
       - wofi
       - udisks2
       - udiskie
-      - htop
       - tailscale
+      - pamixer
+      - network-manager-applet
+      - brightnessctl 
+      - bluez-tools
+      - blueman
+      # sddm
+      - sddm
+      - qt5-qtgraphicaleffects
+      - qt5-qtquickcontrols2
+      - qt5-qtsvg
+      - qt5-qtwayland
+      - qt6-qtwayland
+      - kwallet
+      - pam-kwallet
+      # file manager
+      - thunar
+      - thunar-archive-plugin 
+      - thunar-volman
+      - xarchiver
+      - imv
+      - p7zip
+      - gvfs-mtp
+      - gvfs-gphoto2
+      - gvfs-smb
+      - gvfs-nfs
+      - gvfs-fuse
+      - gvfs-archive
     remove:
-      - firefox
-      - firefox-langpacks
-
-  - type: files
-    files:
-      - source: system
-        destination: /
+      - dolphin
+      - dolphin-plugins 
+      - akonadi-server
+      - akonadi-server-mysql
+      - wallpaper-engine-kde-plugin
+      - plasma-breeze
+      - plasma-desktop
+      - plasma-desktop-doc
+      - plasma-discover
+      - plasma-discover-notifier
+      - plasma-discover-flatpak
+      - plasma-integration
+      - plasma-disks
+      - plasma-nm
+      - plasma-nm-openconnect
+      - plasma-nm-openvpn
+      - plasma-nm-vpnc
+      - plasma-pa
+      - plasma-print-manager
+      - plasma-print-manager-libs
+      - plasma-systemmonitor
+      - plasma-thunderbolt
+      - plasma-vault
+      - sddm-breeze
+      - sddm-wayland-plasma
+      - plasma-workspace-wayland
+      - plasma-workspace
+      - plasma-workspace-wallpapers
+      - plasma-lookandfeel-fedora
+      - plasma-browser-integration
+      - fedora-chromium-config-kde
+      - plymouth-system-theme
+      - polkit-kde
+      - kaccounts-integration-qt6
+      - kaccounts-providers
+      - kcharselect
+      - kde-connect
+      - kde-connect-libs
+      - kde-gtk-config
+      - kde-inotify-survey
+      - kde-partitionmanager
+      - kde-settings-pulseaudio
+      - kdebugsettings
+      - kdegraphics-thumbnailers
+      - kdenetwork-filesharing
+      - kdeplasma-addons
+      - kdialog
+      - kdnssd
+      - krdp
+      - kf6-baloo-file
+      - kf6-purpose
+      - kfind
+      - khelpcenter
+      - kinfocenter
+      - kio-admin
+      - kio-gdrive
+      - kjournald
+      - kjournald-libs
+      - kmenuedit
+      - kscreen
+      - kscreenlocker
+      - kwin
+      - kwin-libs
+      - kwin-wayland
+      - kwin-common
+      - kwrite
+      - kdeconnectd
+      - spectacle
 
   - type: systemd
     system:
       enabled:
-        - sshd.service
+        - sddm.service
         - tailscaled.service
+        - sshd.service
 
   - type: fonts
     fonts:
