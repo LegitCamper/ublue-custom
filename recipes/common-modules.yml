@@ -39,6 +39,7 @@ modules:
       - tailscale
       - pamixer
       - network-manager-applet
+      - brightnessctl 
       - bluez-tools
       - blueman
       # sddm
