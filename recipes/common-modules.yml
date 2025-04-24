@@ -29,6 +29,7 @@ modules:
       - alacritty
       - waybar
       - xdg-desktop-portal-gtk
+      - slurp
       - pavucontrol
       - gnome-disk-utility
       - papirus-icon-theme
