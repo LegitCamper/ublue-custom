@@ -57,11 +57,6 @@ modules:
       - kvantum
       - kwallet
       - pam-kwallet
-      # file manager
-      - thunar
-      - thunar-archive-plugin 
-      - thunar-volman
-      - xarchiver
       - imv
       - p7zip
       - gvfs-mtp
@@ -71,8 +66,6 @@ modules:
       - gvfs-fuse
       - gvfs-archive
     remove:
-      - dolphin
-      - dolphin-plugins 
       - akonadi-server
       - akonadi-server-mysql
       - wallpaper-engine-kde-plugin
