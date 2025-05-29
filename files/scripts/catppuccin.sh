@@ -18,5 +18,5 @@ rm -rf Catppuccin*
 # configures kvantum theme for qt
 git clone https://github.com/catppuccin/Kvantum.git
 mkdir /usr/share/Kvantum
-mv Kvantum/themes /usr/share/Kvantum
+mv Kvantum/themes/* /usr/share/Kvantum/
 rm -r Kvantum
