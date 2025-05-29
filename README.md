@@ -8,9 +8,11 @@ Both have Capuccin Themes preinstalled and some of my prefered installed apps
 ## Themes
 - Catppuccin is preinstalled in 2 directories for both gtk and qt 
 #### Gtk
-- themes are downloaded into `/usr/share/themes/`
+- themes are located in `/usr/share/themes/`
+- can be applied with `GTK_THEME=Catppuccin-Macchiato-Standard-Lavender-Dark`
 #### Qt/Kvantum
-- themes are downloaded into `/usr/share/Kvantum/`
+- themes are located in `/usr/share/Kvantum/`
+- ensure to set `QT_QPA_PLATFORMTHEME=kvantum` and either  launch Kvantum and change the theme, or edit the `~/.config/Kvantum/kvantum.kvconfig`
 
 ## Installation
 
