@@ -5,6 +5,13 @@ Both have Capuccin Themes preinstalled and some of my prefered installed apps
 - Hyprland
 - Sway
 
+## Themes
+- Catppuccin is preinstalled in 2 directories for both gtk and qt 
+#### Gtk
+- themes are downloaded into `/usr/share/themes/`
+#### Qt/Kvantum
+- themes are downloaded into `/usr/share/Kvantum/`
+
 ## Installation
 
 > **Warning**  

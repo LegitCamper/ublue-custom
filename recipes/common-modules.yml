@@ -12,6 +12,11 @@ modules:
     scripts:
       - catppuccin.sh
 
+  - type: files
+    files:
+      - source: system
+        destination: /
+
   - type: default-flatpaks
     notify: true
     system:
@@ -49,8 +54,7 @@ modules:
       - qt5-qtsvg
       - qt5-qtwayland
       - qt6-qtwayland
-      - qt5ct
-      - qt6ct
+      - kvantum
       - kwallet
       - pam-kwallet
       # file manager
