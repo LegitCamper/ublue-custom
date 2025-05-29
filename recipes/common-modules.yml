@@ -32,8 +32,10 @@ modules:
   - type: rpm-ostree
     install:
       - alacritty
+      - htop
       - waybar
       - xdg-desktop-portal-gtk
+      - xdg-desktop-portal-kde
       - slurp
       - pavucontrol
       - gnome-disk-utility
