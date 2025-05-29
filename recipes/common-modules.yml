@@ -43,13 +43,14 @@ modules:
       - brightnessctl 
       - bluez-tools
       - blueman
-      # sddm
       - sddm
       - qt5-qtgraphicaleffects
       - qt5-qtquickcontrols2
       - qt5-qtsvg
       - qt5-qtwayland
       - qt6-qtwayland
+      - qt5ct
+      - qt6ct
       - kwallet
       - pam-kwallet
       # file manager
@@ -95,13 +96,10 @@ modules:
       - plasma-workspace
       - plasma-workspace-wallpapers
       - plasma-lookandfeel-fedora
-      - plasma-browser-integration
-      - fedora-chromium-config-kde
       - plymouth-system-theme
       - polkit-kde
       - kaccounts-integration-qt6
       - kaccounts-providers
-      - kcharselect
       - kde-connect
       - kde-connect-libs
       - kde-gtk-config
