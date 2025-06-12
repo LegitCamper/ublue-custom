@@ -103,7 +103,6 @@ modules:
       - kde-connect-libs
       - kde-gtk-config
       - kde-inotify-survey
-      - kde-partitionmanager
       - kde-settings-pulseaudio
       - kdebugsettings
       - kdegraphics-thumbnailers
