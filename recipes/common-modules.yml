@@ -125,7 +125,6 @@ modules:
       - kscreenlocker
       - kwin
       - kwin-libs
-      - kwin-wayland
       - kwin-common
       - kwrite
       - kdeconnectd
