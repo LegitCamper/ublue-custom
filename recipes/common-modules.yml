@@ -67,6 +67,7 @@ modules:
       - gvfs-nfs
       - gvfs-fuse
       - gvfs-archive
+      - wireshark
     remove:
       - akonadi-server
       - akonadi-server-mysql
