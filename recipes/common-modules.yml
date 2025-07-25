@@ -75,9 +75,6 @@ modules:
       - plasma-breeze
       - plasma-desktop
       - plasma-desktop-doc
-      - plasma-discover
-      - plasma-discover-notifier
-      - plasma-discover-flatpak
       - plasma-integration
       - plasma-disks
       - plasma-nm
