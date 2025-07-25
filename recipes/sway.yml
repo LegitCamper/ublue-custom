@@ -1,13 +1,11 @@
-name: ublue-sway
-description: This is a Bazzite Sway OS image.
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
-base-image: ghcr.io/ublue-os/bazzite
+name: ublue-sway
+description: This is a Ublue Sway OS image.
+
+base-image: ghcr.io/wayblueorg/sway
 image-version: latest
 
 modules:
   - from-file: common-modules.yml
-
-  - type: rpm-ostree
-    install:
-      - sway
-      - xdg-desktop-portal-wlr

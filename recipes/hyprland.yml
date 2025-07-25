@@ -1,7 +1,10 @@
-name: ublue-hyprland
-description: This is a Bazzite Hyprland OS image.
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
-base-image: ghcr.io/ublue-os/bazzite
+name: ublue-hyprland
+description: This is a Ublue Hyprland OS image.
+
+base-image: ghcr.io/wayblueorg/hyprland
 image-version: latest
 
 modules:
@@ -9,7 +12,4 @@ modules:
 
   - type: rpm-ostree
     install:
-      - hyprland        
-      - xdg-desktop-portal-hyprland
-      - swaybg
       - hyprcursor

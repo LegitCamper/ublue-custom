@@ -1,12 +1,3 @@
-stages:
-  - name: bluebuild
-    from: docker.io/library/rust:1.77
-    modules: # same as the top-level modules key, but executed in the custom stage
-      - type: script
-        no-cache: true
-        snippets:
-          - cargo install --locked --all-features blue-build
-
 modules:
   - type: script
     scripts:
@@ -23,9 +14,18 @@ modules:
       repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
       repo-name: flathub
       install:
+        - org.qutebrowser.qutebrowser
         - com.vivaldi.Vivaldi
         - com.github.tchx84.Flatseal
+        - re.sonny.Junction
         - io.github.spacingbat3.webcord
+        - io.podman_desktop.PodmanDesktop
+        - org.angryip.ipscan
+        - org.gnome.Firmware
+        - org.onlyoffice.desktopeditors
+        - io.missioncenter.MissionCenter
+        - com.bitwarden.desktop
+        - com.github.iwalton3.jellyfin-media-player
       remove:
         - org.gnome.eog
 
@@ -33,9 +33,6 @@ modules:
     install:
       - alacritty
       - htop
-      - waybar
-      - xdg-desktop-portal-gtk
-      - xdg-desktop-portal-kde
       - slurp
       - pavucontrol
       - gnome-disk-utility
@@ -50,15 +47,12 @@ modules:
       - brightnessctl 
       - bluez-tools
       - blueman
-      - sddm
       - qt5-qtgraphicaleffects
       - qt5-qtquickcontrols2
       - qt5-qtsvg
       - qt5-qtwayland
       - qt6-qtwayland
       - kvantum
-      - kwallet
-      - pam-kwallet
       - imv
       - p7zip
       - gvfs-mtp
@@ -68,65 +62,6 @@ modules:
       - gvfs-fuse
       - gvfs-archive
       - wireshark
-    remove:
-      - akonadi-server
-      - akonadi-server-mysql
-      - wallpaper-engine-kde-plugin
-      - plasma-breeze
-      - plasma-desktop
-      - plasma-desktop-doc
-      - plasma-integration
-      - plasma-disks
-      - plasma-nm
-      - plasma-nm-openconnect
-      - plasma-nm-openvpn
-      - plasma-nm-vpnc
-      - plasma-pa
-      - plasma-print-manager
-      - plasma-print-manager-libs
-      - plasma-systemmonitor
-      - plasma-thunderbolt
-      - plasma-vault
-      - sddm-breeze
-      - sddm-wayland-plasma
-      - plasma-workspace-wayland
-      - plasma-workspace
-      - plasma-workspace-wallpapers
-      - plasma-lookandfeel-fedora
-      - plymouth-system-theme
-      - polkit-kde
-      - kaccounts-integration-qt6
-      - kaccounts-providers
-      - kde-connect
-      - kde-connect-libs
-      - kde-gtk-config
-      - kde-inotify-survey
-      - kde-settings-pulseaudio
-      - kdebugsettings
-      - kdegraphics-thumbnailers
-      - kdenetwork-filesharing
-      - kdeplasma-addons
-      - kdialog
-      - kdnssd
-      - krdp
-      - kf6-baloo-file
-      - kf6-purpose
-      - kfind
-      - khelpcenter
-      - kinfocenter
-      - kio-admin
-      - kio-gdrive
-      - kjournald
-      - kjournald-libs
-      - kmenuedit
-      - kscreen
-      - kscreenlocker
-      - kwin
-      - kwin-libs
-      - kwin-common
-      - kwrite
-      - kdeconnectd
-      - spectacle
 
   - type: systemd
     system:
@@ -141,3 +76,12 @@ modules:
         - JetBrainsMono
 
   - type: signing
+
+stages:
+  - name: bluebuild
+    from: docker.io/library/rust:1.77
+    modules: # same as the top-level modules key, but executed in the custom stage
+      - type: script
+        no-cache: true
+        snippets:
+          - cargo install --locked --all-features blue-build
