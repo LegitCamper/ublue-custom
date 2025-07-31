@@ -9,25 +9,26 @@ modules:
         destination: /
 
   - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      install:
-        - org.qutebrowser.qutebrowser
-        - com.vivaldi.Vivaldi
-        - com.github.tchx84.Flatseal
-        - re.sonny.Junction
-        - io.github.spacingbat3.webcord
-        - io.podman_desktop.PodmanDesktop
-        - org.angryip.ipscan
-        - org.gnome.Firmware
-        - org.onlyoffice.desktopeditors
-        - io.missioncenter.MissionCenter
-        - com.bitwarden.desktop
-        - com.github.iwalton3.jellyfin-media-player
-      remove:
-        - org.gnome.eog
+    configurations:
+      - notify: true
+        scope: system
+        repo:
+          title: Flathub (system)
+        install:
+          - org.qutebrowser.qutebrowser
+          - com.vivaldi.Vivaldi
+          - com.github.tchx84.Flatseal
+          - re.sonny.Junction
+          - io.github.spacingbat3.webcord
+          - io.podman_desktop.PodmanDesktop
+          - org.angryip.ipscan
+          - org.gnome.Firmware
+          - org.onlyoffice.desktopeditors
+          - io.missioncenter.MissionCenter
+          - com.bitwarden.desktop
+          - com.github.iwalton3.jellyfin-media-player
+        remove:
+          - org.gnome.eog
 
   - type: rpm-ostree
     install:
