@@ -63,6 +63,8 @@ modules:
       - gvfs-fuse
       - gvfs-archive
       - just
+      - tlp
+      - tlp-rdw
       - wireshark
 
   - type: systemd
@@ -71,6 +73,7 @@ modules:
         - sddm.service
         - tailscaled.service
         - sshd.service
+        - tlp.service
 
   - type: fonts
     fonts:
