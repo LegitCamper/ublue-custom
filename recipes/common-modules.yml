@@ -8,6 +8,10 @@ modules:
       - source: system
         destination: /
 
+  - type: bling
+    install:
+     - rpmfusion 
+
   - type: default-flatpaks
     configurations:
       - notify: true
@@ -30,42 +34,43 @@ modules:
         remove:
           - org.gnome.eog
 
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - alacritty
-      - htop
-      - slurp
-      - pavucontrol
-      - gnome-disk-utility
-      - papirus-icon-theme
-      - swaybg
-      - wofi
-      - udisks2
-      - udiskie
-      - tailscale
-      - pamixer
-      - network-manager-applet
-      - brightnessctl 
-      - bluez-tools
-      - blueman
-      - qt5-qtgraphicaleffects
-      - qt5-qtquickcontrols2
-      - qt5-qtsvg
-      - qt5-qtwayland
-      - qt6-qtwayland
-      - kvantum
-      - imv
-      - p7zip
-      - gvfs-mtp
-      - gvfs-gphoto2
-      - gvfs-smb
-      - gvfs-nfs
-      - gvfs-fuse
-      - gvfs-archive
-      - just
-      - tlp
-      - tlp-rdw
-      - wireshark
+      packages:
+        - alacritty
+        - htop
+        - slurp
+        - pavucontrol
+        - gnome-disk-utility
+        - papirus-icon-theme
+        - swaybg
+        - wofi
+        - udisks2
+        - udiskie
+        - tailscale
+        - pamixer
+        - network-manager-applet
+        - brightnessctl 
+        - bluez-tools
+        - blueman
+        - qt5-qtgraphicaleffects
+        - qt5-qtquickcontrols2
+        - qt5-qtsvg
+        - qt5-qtwayland
+        - qt6-qtwayland
+        - kvantum
+        - imv
+        - p7zip
+        - gvfs-mtp
+        - gvfs-gphoto2
+        - gvfs-smb
+        - gvfs-nfs
+        - gvfs-fuse
+        - gvfs-archive
+        - just
+        - tlp
+        - tlp-rdw
+        - wireshark
 
   - type: systemd
     system:
