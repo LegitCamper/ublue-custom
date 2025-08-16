@@ -72,6 +72,16 @@ modules:
         - tlp-rdw
         - wireshark
 
+  - type: dnf
+    repos:
+      files:
+        - https://negativo17.org/repos/fedora-steam.repo
+    install:
+      packages:
+        - install-weak-deps: false
+          packages:
+            - steam
+
   - type: systemd
     system:
       enabled:
