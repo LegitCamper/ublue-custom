@@ -9,3 +9,9 @@ image-version: latest
 
 modules:
   - from-file: common-modules.yml
+
+  - type: os-release
+    properties:
+      ID: blue_build
+      NAME: Sway
+      PRETTY_NAME: Fedora Atomic Sway

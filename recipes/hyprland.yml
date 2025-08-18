@@ -13,3 +13,9 @@ modules:
   - type: rpm-ostree
     install:
       - hyprcursor
+
+  - type: os-release
+    properties:
+      ID: blue_build
+      NAME: Hyprland
+      PRETTY_NAME: Fedora Atomic Hyprland
