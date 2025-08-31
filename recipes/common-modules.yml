@@ -31,12 +31,17 @@ modules:
           - io.missioncenter.MissionCenter
           - com.bitwarden.desktop
           - com.github.iwalton3.jellyfin-media-player
+          - io.github.ilya_zlobintsev.LACT
         remove:
           - org.gnome.eog
 
   - type: dnf
+    repos:
+      copr:
+        - ilyaz/LACT
     install:
       packages:
+        - lact
         - alacritty
         - htop
         - slurp
