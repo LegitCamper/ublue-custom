@@ -4,6 +4,7 @@
 Both have Capuccin Themes preinstalled and some of my prefered installed apps
 - Hyprland
 - Sway
+- Niri
 
 ## Themes
 - Catppuccin is preinstalled in 2 directories for both gtk and qt 

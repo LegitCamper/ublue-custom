@@ -1,0 +1,25 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+
+name: ublue-niri
+description: This is a Ublue Niri OS image.
+
+# wayblue does not have a niri image yet
+base-image: ghcr.io/wayblueorg/sway
+image-version: latest
+
+modules:
+  - from-file: common-modules.yml
+
+  - type: rpm-ostree
+    install:
+      - niri
+      - fuzzel
+    remove:
+      - sway
+
+  - type: os-release
+    properties:
+      ID: blue_build
+      NAME: Niri
+      PRETTY_NAME: Fedora Atomic Niri
