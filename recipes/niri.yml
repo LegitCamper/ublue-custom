@@ -16,7 +16,10 @@ modules:
       - niri
       - fuzzel
     remove:
-      - sway
+      # - sway
+      - foot
+      - swaylock
+      - swayidle
 
   - type: os-release
     properties:
