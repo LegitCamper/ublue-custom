@@ -12,6 +12,18 @@ modules:
     install:
      - rpmfusion 
 
+  - type: containerfile
+    snippets:
+      - ARG FEDORA_VERSION=42
+      - COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_VERSION} / /tmp/akmods-common
+      - RUN find /tmp/akmods-common
+      # Install xone dep
+      - RUN dnf copr enable -y ublue-os/akmods
+      - RUN dnf install -y xone-kmod-common
+      # Install ublue-os support package and akmods
+      - RUN dnf install -y /tmp/akmods-common/rpms/ublue-os/ublue-os-akmods*.rpm
+      - RUN dnf install -y /tmp/akmods-common/rpms/kmods/kmod-xone*.rpm
+
   - type: default-flatpaks
     configurations:
       - notify: true
