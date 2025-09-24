@@ -14,8 +14,7 @@ modules:
 
   - type: containerfile
     snippets:
-      - ARG FEDORA_VERSION=42
-      - COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_VERSION} / /tmp/akmods-common
+      - COPY --from=ghcr.io/ublue-os/akmods:main-42 / /tmp/akmods-common
       - RUN find /tmp/akmods-common
       # Install xone dep
       - RUN dnf copr enable -y ublue-os/akmods
