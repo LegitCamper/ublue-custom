@@ -10,6 +10,10 @@ image-version: latest
 modules:
   - from-file: common-modules.yml
 
+  - type: rpm-ostree
+    install:
+      - wofi
+
   - type: os-release
     properties:
       ID: blue_build

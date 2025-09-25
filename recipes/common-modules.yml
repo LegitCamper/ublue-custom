@@ -1,8 +1,9 @@
 modules:
   - type: script
     scripts:
+      - bazzite_kernel.sh
       - catppuccin.sh
-
+   
   - type: files
     files:
       - source: system
@@ -11,17 +12,6 @@ modules:
   - type: bling
     install:
      - rpmfusion 
-
-  - type: containerfile
-    snippets:
-      - COPY --from=ghcr.io/ublue-os/akmods:main-42 / /tmp/akmods-common
-      - RUN find /tmp/akmods-common
-      # Install xone dep
-      - RUN dnf copr enable -y ublue-os/akmods
-      - RUN dnf install -y xone-kmod-common
-      # Install ublue-os support package and akmods
-      - RUN dnf install -y /tmp/akmods-common/rpms/ublue-os/ublue-os-akmods*.rpm
-      - RUN dnf install -y /tmp/akmods-common/rpms/kmods/kmod-xone*.rpm
 
   - type: default-flatpaks
     configurations:
@@ -50,8 +40,12 @@ modules:
     repos:
       copr:
         - ilyaz/LACT
+        - ublue-os/akmods
     install:
       packages:
+        - xone-kmod-common
+        - xone-kmod
+
         - lact
         - alacritty
         - htop
@@ -60,7 +54,6 @@ modules:
         - gnome-disk-utility
         - papirus-icon-theme
         - swaybg
-        - wofi
         - udisks2
         - udiskie
         - tailscale

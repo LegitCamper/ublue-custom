@@ -13,6 +13,7 @@ modules:
   - type: rpm-ostree
     install:
       - hyprcursor
+      - wofi
 
   - type: os-release
     properties:
