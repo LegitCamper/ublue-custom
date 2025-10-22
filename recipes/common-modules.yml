@@ -48,6 +48,7 @@ modules:
         - lact
         - alacritty
         - htop
+        - stow
         - papirus-icon-theme
         - swaybg
         - udisks2
