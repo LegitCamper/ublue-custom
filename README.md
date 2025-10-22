@@ -48,7 +48,7 @@ IMAGE_REPO=ghcr.io/legitcamper
 IMAGE_NAME=ublue-hyprland
 IMAGE_TAG=latest
 IMAGE_VARIANT=Silverblue
-INSTALLER_VERSION=39
+INSTALLER_VERSION=42
 
 sudo podman run --rm --privileged --volume .:/isogenerator/output --security-opt label=disable --pull=newer \
 -e IMAGE_REPO="$IMAGE_REPO" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="$IMAGE_TAG" -e VARIANT="$IMAGE_VARIANT" \

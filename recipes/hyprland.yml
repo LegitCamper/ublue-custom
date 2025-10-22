@@ -5,7 +5,7 @@ name: ublue-hyprland
 description: This is a Ublue Hyprland OS image.
 
 base-image: ghcr.io/wayblueorg/hyprland
-image-version: latest
+image-version: 42
 
 modules:
   - from-file: common-modules.yml

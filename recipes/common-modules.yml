@@ -1,17 +1,20 @@
 modules:
+  - type: containerfile
+    snippets:
+      - COPY --from=ghcr.io/ublue-os/akmods:bazzite-42 /rpms /tmp/rpms
+      - COPY --from=ghcr.io/ublue-os/akmods:bazzite-42 /kernel-rpms /tmp/rpms/kernel
+      - RUN find /tmp/rpms
+      - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
   - type: script
+    snippets:
+      - "curl -fsSL 'https://raw.githubusercontent.com/wayblueorg/wayblue/refs/heads/live/files/scripts/installsignedkernel.sh' | bash"
     scripts:
-      - bazzite_kernel.sh
       - catppuccin.sh
    
   - type: files
     files:
       - source: system
         destination: /
-
-  - type: bling
-    install:
-     - rpmfusion 
 
   - type: default-flatpaks
     configurations:
@@ -40,43 +43,20 @@ modules:
     repos:
       copr:
         - ilyaz/LACT
-        - ublue-os/akmods
     install:
       packages:
-        - xone-kmod-common
-        - xone-kmod
-
         - lact
         - alacritty
         - htop
-        - slurp
-        - pavucontrol
-        - gnome-disk-utility
         - papirus-icon-theme
         - swaybg
         - udisks2
         - udiskie
         - tailscale
-        - pamixer
-        - network-manager-applet
-        - brightnessctl 
-        - bluez-tools
-        - blueman
         - qt5-qtgraphicaleffects
         - qt5-qtquickcontrols2
         - qt5-qtsvg
-        - qt5-qtwayland
-        - qt6-qtwayland
         - kvantum
-        - imv
-        - p7zip
-        - gvfs-mtp
-        - gvfs-gphoto2
-        - gvfs-smb
-        - gvfs-nfs
-        - gvfs-fuse
-        - gvfs-archive
-        - just
         - tlp
         - tlp-rdw
         - wireshark

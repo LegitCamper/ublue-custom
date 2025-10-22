@@ -6,7 +6,7 @@ description: This is a Ublue Niri OS image.
 
 # wayblue does not have a niri image yet
 base-image: ghcr.io/wayblueorg/sway
-image-version: latest
+image-version: 42
 
 modules:
   - from-file: common-modules.yml
@@ -16,10 +16,14 @@ modules:
       - niri
       - fuzzel
     remove:
-      # - sway
       - foot
       - swaylock
       - swayidle
+      - sway
+      - sway-systemd
+      - sway-config-fedora
+      - sddm-wayland-sway
+      - grimshot
 
   - type: os-release
     properties:

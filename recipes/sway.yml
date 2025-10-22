@@ -5,7 +5,7 @@ name: ublue-sway
 description: This is a Ublue Sway OS image.
 
 base-image: ghcr.io/wayblueorg/sway
-image-version: latest
+image-version: 42
 
 modules:
   - from-file: common-modules.yml
