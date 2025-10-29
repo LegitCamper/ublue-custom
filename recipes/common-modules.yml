@@ -43,10 +43,12 @@ modules:
     repos:
       copr:
         - ilyaz/LACT
+        - scottames/ghostty
     install:
       packages:
         - lact
         - alacritty
+        - ghostty
         - htop
         - stow
         - papirus-icon-theme
