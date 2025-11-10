@@ -46,6 +46,7 @@ modules:
         - scottames/ghostty
     install:
       packages:
+        - podman-compose
         - lact
         - alacritty
         - ghostty
