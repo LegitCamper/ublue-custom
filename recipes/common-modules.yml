@@ -36,10 +36,8 @@ modules:
       copr:
         - ilyaz/LACT
         - scottames/ghostty
-        - ublue-os/akmods
     install:
       packages:
-        # - xone-kmod-common
         - lact
         - tailscale
         - udisks2
@@ -71,10 +69,13 @@ modules:
     snippets:
       - COPY --from=ghcr.io/ublue-os/akmods:main-43 /kernel-rpms /tmp/rpms/kernel
       - RUN bash <(curl https://raw.githubusercontent.com/wayblueorg/wayblue/refs/heads/live/files/scripts/installsignedkernel.sh)      
+
       - COPY --from=ghcr.io/ublue-os/akmods:main-43 /rpms /tmp/rpms
       - RUN find /tmp/rpms
       - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
-      - RUN rpm-ostree install /tmp/rpms/kmods/kmod-xone*.rpm
+      # TODO: get latest version via script
+      - RUN curl -L -o /tmp/rpms/kmods/xone-kmod-common.rpm "https://download.copr.fedorainfracloud.org/results/ublue-os/akmods/fedora-43-x86_64/09498341-xone-kmod-common/xone-kmod-common-1000.0.0.git.1114.82438c9a-1.fc43.noarch.rpm"
+      - RUN rpm-ostree install /tmp/rpms/kmods/kmod-xone*.rpm /tmp/rpms/kmods/xone-kmod-common.rpm 
 
   - type: fonts
     fonts:
