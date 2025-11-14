@@ -2,10 +2,10 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
 name: ublue-hyprland
-description: This is a Ublue Hyprland OS image.
+description: This is a Hyprland Ublue OS image.
 
 base-image: ghcr.io/wayblueorg/hyprland
-image-version: 42
+image-version: 43
 
 modules:
   - from-file: common-modules.yml

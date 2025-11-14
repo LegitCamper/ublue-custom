@@ -1,17 +1,4 @@
 modules:
-  - type: containerfile
-    snippets:
-      # install bazzite kernel
-      - COPY --from=ghcr.io/ublue-os/akmods:bazzite-42 /kernel-rpms /tmp/rpms/kernel
-      - RUN bash <(curl https://raw.githubusercontent.com/wayblueorg/wayblue/refs/heads/live/files/scripts/installsignedkernel.sh)
-
-      - COPY --from=ghcr.io/ublue-os/akmods:bazzite-42 /rpms /tmp/rpms
-      - RUN find /tmp/rpms
-      - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
-
-      - RUN ls /tmp/rpms/kmods/
-      - RUN dnf install --skip-broken /tmp/rpms/kmods/kmod-xone*.rpm
-
   - type: script
     scripts:
       - catppuccin.sh
@@ -52,24 +39,24 @@ modules:
         - ublue-os/akmods
     install:
       packages:
-        - xone-kmod-common
-        - podman-compose
+        # - xone-kmod-common
         - lact
+        - tailscale
+        - udisks2
+        - udiskie
+        - swaybg
+        - kvantum
+        - papirus-icon-theme
+        - qt5-qtgraphicaleffects
+        - qt5-qtquickcontrols2
+        - qt5-qtsvg
+        - tlp-rdw
+        - tlp
+        - podman-compose
         - alacritty
         - ghostty
         - htop
         - stow
-        - papirus-icon-theme
-        - swaybg
-        - udisks2
-        - udiskie
-        - tailscale
-        - qt5-qtgraphicaleffects
-        - qt5-qtquickcontrols2
-        - qt5-qtsvg
-        - kvantum
-        - tlp
-        - tlp-rdw
         - wireshark
 
   - type: systemd
@@ -79,6 +66,15 @@ modules:
         - tailscaled.service
         - sshd.service
         - tlp.service
+
+  - type: containerfile
+    snippets:
+      - COPY --from=ghcr.io/ublue-os/akmods:main-43 /kernel-rpms /tmp/rpms/kernel
+      - RUN bash <(curl https://raw.githubusercontent.com/wayblueorg/wayblue/refs/heads/live/files/scripts/installsignedkernel.sh)      
+      - COPY --from=ghcr.io/ublue-os/akmods:main-43 /rpms /tmp/rpms
+      - RUN find /tmp/rpms
+      - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
+      - RUN rpm-ostree install /tmp/rpms/kmods/kmod-xone*.rpm
 
   - type: fonts
     fonts:

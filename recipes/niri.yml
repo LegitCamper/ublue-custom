@@ -2,11 +2,11 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
 name: ublue-niri
-description: This is a Ublue Niri OS image.
+description: This is a Niri Ublue OS image.
 
 # wayblue does not have a niri image yet
 base-image: ghcr.io/wayblueorg/sway
-image-version: 42
+image-version: 43
 
 modules:
   - from-file: common-modules.yml

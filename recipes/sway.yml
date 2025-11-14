@@ -2,10 +2,10 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
 name: ublue-sway
-description: This is a Ublue Sway OS image.
+description: This is a Sway Ublue OS image.
 
 base-image: ghcr.io/wayblueorg/sway
-image-version: 42
+image-version: 43
 
 modules:
   - from-file: common-modules.yml
