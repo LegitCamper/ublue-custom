@@ -4,8 +4,7 @@
 name: ublue-niri
 description: This is a Niri Ublue OS image.
 
-# wayblue does not have a niri image yet
-base-image: ghcr.io/wayblueorg/sway
+base-image: ghcr.io/wayblueorg/niri
 image-version: 43
 
 modules:
@@ -17,15 +16,6 @@ modules:
       - xdg-desktop-portal-wlr
       - xwayland-satellite
       - fuzzel
-    remove:
-      - foot
-      - swaylock
-      - swayidle
-      - sway
-      - sway-systemd
-      - sway-config-fedora
-      - sddm-wayland-sway
-      - grimshot
 
   - type: os-release
     properties:
