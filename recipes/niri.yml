@@ -5,8 +5,7 @@ name: ublue-niri
 description: This is a Niri Ublue OS image.
 
 base-image: ghcr.io/wayblueorg/niri
-image-version: 43
-
+image-version: br-niritesting-42
 modules:
   - from-file: common-modules.yml
 

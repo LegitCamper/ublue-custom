@@ -36,12 +36,14 @@ modules:
       copr:
         - ilyaz/LACT
         - scottames/ghostty
+        - solopasha/hyprland
     install:
       packages:
         - lact
         - tailscale
         - udisks2
         - udiskie
+        - aylurs-gtk-shell
         - swaybg
         - kvantum
         - papirus-icon-theme
